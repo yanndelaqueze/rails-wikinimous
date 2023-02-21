@@ -1,0 +1,16 @@
+<div class="border bg-secondary-subtle mb-3">
+  <div class="container p-2 d-flex justify-content-between">
+    <h3>Wikinimous</h3>
+    <%= link_to "Create new article", new_article_path, class: "btn btn-primary"  %>
+  </div>
+</div>
+<div class="container">
+  <ul class = "list-unstyled">
+    <% @articles.each do |article|  %>
+      <li>
+      <h2><%= link_to article.title, article_path(article), class: "text-decoration-none"%></h2>
+      <p><%= article.content %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
